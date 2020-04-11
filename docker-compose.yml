@@ -54,7 +54,7 @@ services:
       
     ports:
       # <Port exposed> : < MySQL Port running inside container>
-      - '32768:3306' #docker port simplerestfullserver_db_1
+      - '${MYSQL_PORT}:3306' #docker port simplerestfullserver_db_1
     expose:
       # Opens port 3306 on the container
       - '3306'
