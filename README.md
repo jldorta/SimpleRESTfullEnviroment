@@ -3,10 +3,11 @@
 <img align="left" width="auto" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Webysther_20160423_-_Elephpant.svg/1200px-Webysther_20160423_-_Elephpant.svg.png">
 <img align="left" width="auto" height="40" src="https://dzone.com/storage/temp/11479913-mariadb.png">
 
-<hr>
+--
+
 
 ## Configuration
-Edit .env file to modify default values
+Edit [.env](https://github.com/jldorta/SimpleRESTfullEnviroment/blob/master/.env) file to modify default values
 
 ### Start the enviroment
 ```bash
