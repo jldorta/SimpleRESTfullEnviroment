@@ -6,6 +6,7 @@ Edit .env file to modify default values
 ### Start the enviroment
 ```
 docker-compose up -d
+docker-compose ps
 ```
 
 ### Usage
