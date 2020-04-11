@@ -1,4 +1,7 @@
 # SimpleRESTfullEnviroment
+<img align="left" width="auto" height="40" src="https://cdn.iconscout.com/icon/free/png-256/docker-226091.png">
+<img align="left" width="auto" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Webysther_20160423_-_Elephpant.svg/1200px-Webysther_20160423_-_Elephpant.svg.png">
+<img align="left" width="auto" height="40" src="https://dzone.com/storage/temp/11479913-mariadb.png">
 
 ## Configuration
 Edit .env file to modify default values
