@@ -3,9 +3,12 @@
 ## Configuration
 Edit .env file to modify default values
 
-## Start the enviroment
-```
+### Start the enviroment
+```bash
 docker-compose up -d
+```
+### List Ports
+```bash
 docker-compose ps
 ```
 
