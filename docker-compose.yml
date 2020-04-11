@@ -1,0 +1,62 @@
+version: "3.7"
+
+services:
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - "./html:/var/www/html/"
+      - "./config/nginx.conf:/etc/nginx/conf.d/default.conf"
+    environment:
+      TZ: "America/New_York"
+    depends_on:
+      - php
+      - db
+      
+  php:
+    image: php:7.4-fpm
+    volumes:
+      - ".:/var/www/"
+      - "./config/php.ini:/usr/local/etc/php-fpm.d/www2.conf"
+    environment:
+      - MYSQL_DB=${MYSQL_DB}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    command: >
+      sh -c "ln -snf /usr/share/zoneinfo/${TIME_ZONE}  /etc/localtime && 
+      echo ${TIME_ZONE} > /etc/timezone &&
+      docker-php-ext-install mysqli &&
+      docker-php-entrypoint php-fpm"
+        
+  composer:
+    image: composer:latest
+    command: ["composer", "update"]
+    volumes:
+      - ./codeigniter:/app
+      
+  db:
+    image: mariadb:latest
+    restart: always
+    
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DB}
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: ${MYSQL_USER}
+      # You can use whatever password you like
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    
+    environment:
+      TZ: ${TIME_ZONE}
+      
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '32768:3306' #docker port simplerestfullserver_db_1
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+    volumes:
+      - ./db:/var/lib/mysql
