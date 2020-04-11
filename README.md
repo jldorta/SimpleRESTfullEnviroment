@@ -1,31 +1,31 @@
 # SimpleRESTfullEnviroment
 
-### Configuration
+## Configuration
 Edit .env file to modify default values
 
-### Start the enviroment
+## Start the enviroment
 ```
 docker-compose up -d
 docker-compose ps
 ```
 
-### Usage
-*GET*
+## Usage
+### GET
 ```
 [SERVER]/api/data/:table[/:id]?[field=Value][field_like=Like]
 ```
 
-*POST*
+### POST
 ```
 [SERVER]/api/data/:table
 ```
 
-*PUT*
+### PUT
 ```
 [SERVER]/api/data/:table/:id
 ```
 
-*DELETE*
+### DELETE
 ```
 [SERVER]/api/data/:table/:id
 ```
