@@ -5,7 +5,6 @@
 
 <br>
 <br>
-<br>
 
 ## Configuration
 Edit [.env](https://github.com/jldorta/SimpleRESTfullEnviroment/blob/master/.env) file to modify default values
